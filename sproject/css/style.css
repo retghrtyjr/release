@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@300;500;700&display=swap');
+
+:root {
+  --bg-dark: #1a1a2e;
+  --bg-accent: #16213e;
+  --bg-light: #e6e6e6;
+  --text-light: #f2f2f2;
+  --text-dark: #1a1a1a;
+  --primary: #ff6f61;     /* коралово-рожевий */
+  --secondary: #6a67ce;   /* фіолетовий */
+  --gold: #f2c94c;        /* золото */
+  --gradient: linear-gradient(to right, #ff6f61, #ff9671);
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Martian Mono", monospace;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  margin: 0;
+}
+
+body.light-theme {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* Header */
+header {
+  background-color: var(--bg-accent);
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+
+/* Banner */
+.banner {
+  height: 90vh;
+  background: var(--gradient);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  text-align: center;
+  animation: fadeIn 2s ease-in;
+}
+
+.banner h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.banner h3 {
+  font-weight: 400;
+}
+
+/* Cards */
+.container-cards, .products-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 0;
+}
+
+.my-card {
+  background: #bdf4f8;
+  border: 2px solid var(--secondary);
+  padding: 20px;
+  border-radius: 16px;
+  text-align: center;
+  width: 300px;
+  height: 600px;
+  color: rgb(196, 193, 197);
+  transition: transform 0.3s, background 0.3s;
+
+  p {
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+  }
+}
+
+.my-card:hover {
+  background: var(--secondary);
+  transform: scale(1.05);
+  color: #fff;
+}
+
+.text-my-card {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--gold);
+}
+
+.description-card {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+.price-card {
+  font-size: 1rem;
+  color: var(--primary);
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Buttons */
+.btn-search,
+.cart-btn {
+  background: var(--gradient);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-search:hover,
+.cart-btn:hover {
+  background: linear-gradient(to right, #ff9671, #ffc75f);
+  transform: scale(1.05);
+}
+
+.cart-counter {
+  background: var(--gold);
+  color: var(--bg-dark);
+  padding: 0 0.4em;
+  border-radius: 12px;
+  font-weight: 600;
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  font-size: 0.75rem;
+}
+
+/* Footer */
+footer {
+  background: var(--bg-accent);
+  color: var(--text-light);
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.attribution {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+
+.attribution a {
+  color: var(--gold);
+  text-decoration: underline;
+}
+
+/* Theme Toggle */
+#themeToggle {
+  background: var(--gradient);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 30px;
+  font-size: 24px;
+  transition: 0.3s ease;
+}
+
+#themeToggle:hover {
+  transform: rotate(20deg);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(50px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bellRing {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(10deg); }
+  30% { transform: rotate(-10deg); }
+  45% { transform: rotate(5deg); }
+  60% { transform: rotate(-5deg); }
+  75% { transform: rotate(2deg); }
+}
+
+
+.my-card img {
+  width: 250px;
+}
